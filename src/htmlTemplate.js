@@ -24,13 +24,11 @@ function htmlRender (arr) {
     for(i=0;i< arr.length; i++){
         middle += `<div class="col-6">
             <div class="card mx-auto" style="width: 18rem">
-                <h5 class="card-header">Example<br /><br />${arr[i].name}</h5>
+                <h5 class="card-header">${param.role}<br /><br />${arr[i].name}</h5>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">${arr[i].id}</li>
                     <li class="list-group-item">${arr[i].email}</li>
-                    <li class="list-group-item">${arr[i].github}</li>
-                    <li class="list-group-item">${arr[i].officenumber}</li>
-                    <li class="list-group-item">${arr[i].school}</li>
+                    <li class="list-group-item">${arr[i].roleSpecific}</li>
                 </ul>
             </div>
     </div>

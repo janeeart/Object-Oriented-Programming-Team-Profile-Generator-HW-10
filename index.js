@@ -5,8 +5,6 @@ const Engineer = require("./lib/engineer")
 const Intern = require("./lib/intern")
 const Manager = require("./lib/manager")
 
-const employees = [];
-
 function start (){
 
     inquirer.prompt([
@@ -45,15 +43,23 @@ function askBasic(param){
             name: "email",
         }
     ]).then(res => {
+        let roleSpecific = "";
+        if (param.role === "Engineer") {
+            roleSpecific = "GitHub username";
+        } else if (param.role === "Intern") {
+            roleSpecifc = "school name";
+        } else {
+            param.role = "office phone number";
+        }
         if(param.role == "Engineer"){
             inquirer.prompt([ 
                 {
-                message: "Enter team member's GitHub:",
+                message: `Enter team member's ${roleSpecific}:`,
                 type: "input",
                 name: "github"
                 }
-            ]).then(engineerRes => {
-                let engineer = new Engineer(param.role, res.name, res.id, res.email, engineerRes.github)
+            ]).then(function({roleSpecific}) {
+                let engineer = new Engineer(param.role, res.name, res.id, res.email, roleSpecific)
                 arr.push(engineer);
                 console.log(arr)
                 start()
@@ -62,12 +68,12 @@ function askBasic(param){
         else if(param.role == "Intern") {
             inquirer.prompt([
                 {
-                    message: "Enter team member's school name:",
+                    message: `Enter team member's ${roleSpecific}`,
                     type: "input",
                     name: "school"
                 }
-            ]).then(internRes => {
-                let intern = new Intern(param.role, res.name, res.id, res.email, internRes.school)
+            ]).then(function({roleSpecific}) {
+                let intern = new Intern(param.role, res.name, res.id, res.email, roleSpecific)
                 arr.push(intern);
                 console.log(arr)
                 start()
@@ -80,8 +86,8 @@ function askBasic(param){
                     type: "input",
                     name: "officenumber"
                 }
-            ]).then(managerRes => {
-                let manager = new Manager(param.role, res.name, res.id, res.email, managerRes.officenumber)
+            ]).then(function({roleSpecific}) {
+                let manager = new Manager(param.role, res.name, res.id, res.email, roleSpecific)
                 arr.push(manager);
                 console.log(arr)
                 start()
