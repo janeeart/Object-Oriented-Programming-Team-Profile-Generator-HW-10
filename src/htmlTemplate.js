@@ -32,8 +32,8 @@ function htmlRender (arr) {
                 <h5 class="card-header">${arr[i].name}<br /><br /><i class="fas fa-glasses"></i>${arr[i].getRole()}</h5>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">ID: ${arr[i].id}</li>
-                    <li class="list-group-item">Email: <a href="mailto:${arr[i].email}"></a></li>
-                    <li class="list-group-item">GitHub: <a href="https://github.com/${arr[i].github}"></a></li>
+                    <li class="list-group-item">Email: <a href="mailto:${arr[i].email}">${arr[i].email}</a></li>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/${arr[i].github}">${arr[i].github}</a></li>
                 </ul>
             </div>
             </div>
@@ -45,8 +45,8 @@ function htmlRender (arr) {
                     <h5 class="card-header">${arr[i].name}<br /><br /><i class="fas fa-mug-hot"></i>${arr[i].getRole()}</h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">ID: ${arr[i].id}</li>
-                        <li class="list-group-item">Email: <a href="mailto:${arr[i].email}"></a></li>
-                        <li class="list-group-item">Office Phone Number: <a href="tel:${arr[i].officenumber}"></a></li>
+                        <li class="list-group-item">Email: <a href="mailto:${arr[i].email}">${arr[i].email}</a></li>
+                        <li class="list-group-item">Office Phone Number: <a href="tel:${arr[i].officeNumber}">${arr[i].officeNumber}</a></li>
                     </ul>
                 </div>
                 </div>
@@ -58,7 +58,7 @@ function htmlRender (arr) {
                         <h5 class="card-header">${arr[i].name}<br /><br /><i class="fas fa-user-graduate"></i>${arr[i].getRole()}</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">ID: ${arr[i].id}</li>
-                            <li class="list-group-item">Email: <a href="mailto:${arr[i].email}"></a></li>
+                            <li class="list-group-item">Email: <a href="mailto:${arr[i].email}">${arr[i].email}</a></li>
                             <li class="list-group-item">School: ${arr[i].school}</li>
                         </ul>
                     </div>
