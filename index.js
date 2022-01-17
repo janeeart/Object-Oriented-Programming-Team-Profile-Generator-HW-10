@@ -67,7 +67,7 @@ function start (){
                         name: "email",
                     },
                     {
-                        message: "Enter team member's office number:",
+                        message: "Enter team member's office phone number:",
                         type: "input",
                         name: "officenumber"
                     },
